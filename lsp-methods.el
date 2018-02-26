@@ -263,6 +263,20 @@ for a new workspace."
                  (const :tag "Use the method recommended by the language server." nil))
   :group 'lsp-mode)
 
+;; Basic whiltelist/blacklist operational logic
+;;
+;; - always start
+;;   (lsp-project-whitelist is nil,
+;;    lsp-project-blacklist is nil)
+;;
+;; - start for all except
+;;   (lsp-project-whitelist is nil,
+;;    lsp-project-blacklist contains the exception(s))
+;;
+;; - only start for
+;;   (lsp-project-whitelist contains projects to start,
+;;    lsp-project-blacklist ignored)
+
 ;;;###autoload
 (defcustom lsp-project-blacklist nil
   "A list of project directory regexps for which LSP shouldn't be initialized.
@@ -272,7 +286,8 @@ whitelist, or does not match any pattern in the blacklist."
   :group 'lsp-mode)
 
 (defcustom lsp-project-whitelist nil
-  "A list of project directory regexps for which LSP should be initialized."
+  "A list of project directory regexps for which LSP should be initialized.
+When set this turns off use of `lsp-project-blacklist'"
   :type '(repeat regexp)
   :group 'lsp-mode)
 
@@ -720,7 +735,7 @@ ServerCapabilities.textDocumentSync."
   "Consult `lsp-project-blacklist' and `lsp-project-whitelist' to
 determine if a server should be started for the given ROOT
 directory."
-  (or
+  (if lsp-project-whitelist
     (cl-some (lambda (p) (string-match-p p root))
       lsp-project-whitelist)
     (cl-notany (lambda (p) (string-match-p p root))
