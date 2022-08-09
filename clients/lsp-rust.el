@@ -27,6 +27,7 @@
 (require 'lsp-mode)
 (require 'ht)
 (require 'dash)
+(require 'lsp-semantic-tokens)
 
 (defgroup lsp-rust nil
   "LSP support for Rust, using Rust Language Server or rust-analyzer."
@@ -926,6 +927,22 @@ or JSON objects in `rust-project.json` format."
 (lsp-defun lsp-rust--analyzer-debug-lens ((&Command :arguments? [args]))
   (lsp-rust-analyzer-debug args))
 
+(defvar font-lock-mutable-face 'font-lock-mutable-face
+  "Face name to use for mutable items.")
+
+(defface font-lock-mutable-face
+  '((t :underline t))
+  "Font Lock mode face used to highlight keywords."
+  :group 'font-lock-faces)
+
+(defvar font-lock-nop-face 'font-lock-nop-face
+  "Placeholder face name that does not actually modify the face.")
+
+(defface font-lock-nop-face
+  '((t nil))
+  "Placeholder face name that does not actually modify the face."
+  :group 'font-lock-faces)
+
 (lsp-register-client
  (make-lsp-client
   :new-connection (lsp-stdio-connection
@@ -1288,6 +1305,42 @@ https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/dev/lsp-extensio
   "Move item under cursor or selection down"
   (interactive)
   (lsp-rust-analyzer-move-item "Down"))
+
+(defun lsp-rust-analyzer--set-tokens ()
+  "Set the mapping between rust-analyzer keywords and fonts to apply.
+The keywords are sent in the initialize response, in the semantic
+tokens legend."
+  (setq lsp-semantic-token-modifier-faces
+        '(
+          ("documentation" . font-lock-nop-face)
+          ("declaration" . font-lock-nop-face)
+          ("definition" . font-lock-nop-face)
+          ("static" . font-lock-nop-face)
+          ("abstract" . font-lock-nop-face)
+          ("deprecated" . font-lock-nop-face)
+          ("readonly" . font-lock-nop-face)
+          ("default_library" . font-lock-nop-face)
+          ("async" . font-lock-nop-face)
+          ("attribute" . font-lock-nop-face)
+          ("callable" . font-lock-nop-face)
+          ("constant" . font-lock-nop-face)
+          ("consuming" . font-lock-nop-face)
+          ("control_flow" . font-lock-nop-face)
+          ("crate_root" . font-lock-nop-face)
+          ("injected" . font-lock-nop-face)
+          ("intra_doc_link" . font-lock-nop-face)
+          ("library" . font-lock-nop-face)
+          ("mutable" . font-lock-mutable-face)
+          ("public" . font-lock-nop-face)
+          ("reference" . font-lock-nop-face)
+          ("trait" . font-lock-nop-face)
+          ("unsafe" . font-lock-nop-face)
+          )))
+
+(with-eval-after-load 'rust-mode
+  (when lsp-semantic-tokens-enable
+    (lsp-rust-analyzer--set-tokens)
+    (add-hook 'rust-mode-hook #'lsp-rust-analyzer--set-tokens)))
 
 (lsp-consistency-check lsp-rust)
 
