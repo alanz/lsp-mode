@@ -27,6 +27,7 @@
 (require 'lsp-mode)
 (require 'ht)
 (require 'dash)
+(require 'lsp-semantic-tokens)
 
 (defgroup lsp-rust nil
   "LSP support for Rust, using Rust Language Server or rust-analyzer."
@@ -945,7 +946,9 @@ or JSON objects in `rust-project.json` format."
   :library-folders-fn (lambda (_workspace) lsp-rust-analyzer-library-directories)
   :after-open-fn (lambda ()
                    (when lsp-rust-analyzer-server-display-inlay-hints
-                     (lsp-rust-analyzer-inlay-hints-mode)))
+                     (lsp-rust-analyzer-inlay-hints-mode))
+                   (when lsp-semantic-tokens-enable
+                     (lsp-rust-analyzer--set-tokens)))
   :ignore-messages nil
   :server-id 'rust-analyzer
   :custom-capabilities `((experimental . ((snippetTextEdit . ,(and lsp-enable-snippet (featurep 'yasnippet))))))
@@ -1288,6 +1291,156 @@ https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/dev/lsp-extensio
   "Move item under cursor or selection down"
   (interactive)
   (lsp-rust-analyzer-move-item "Down"))
+
+
+;; Semantic tokens
+
+;; Modifier faces
+(defface lsp-rust-analyzer-documentation-modifier-face
+  '((t nil))
+  "The face modification to use for documentation items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-declaration-modifier-face
+  '((t nil))
+  "The face modification to use for declaration items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-definition-modifier-face
+  '((t nil))
+  "The face modification to use for definition items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-static-modifier-face
+  '((t nil))
+  "The face modification to use for static items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-abstract-modifier-face
+  '((t nil))
+  "The face modification to use for abstract items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-deprecated-modifier-face
+  '((t nil))
+  "The face modification to use for deprecated items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-readonly-modifier-face
+  '((t nil))
+  "The face modification to use for readonly items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-default-library-modifier-face
+  '((t nil))
+  "The face modification to use for default-library items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-async-modifier-face
+  '((t nil))
+  "The face modification to use for async items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-attribute-modifier-face
+  '((t nil))
+  "The face modification to use for attribute items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-callable-modifier-face
+  '((t nil))
+  "The face modification to use for callable items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-constant-modifier-face
+  '((t nil))
+  "The face modification to use for constant items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-consuming-modifier-face
+  '((t nil))
+  "The face modification to use for consuming items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-control-flow-modifier-face
+  '((t nil))
+  "The face modification to use for control-flow items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-crate-root-modifier-face
+  '((t nil))
+  "The face modification to use for crate-root items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-injected-modifier-face
+  '((t nil))
+  "The face modification to use for injected items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-intra-doc-link-modifier-face
+  '((t nil))
+  "The face modification to use for intra-doc-link items.")
+  :group 'lsp-rust-analyzer
+
+(defface lsp-rust-analyzer-library-modifier-face
+  '((t nil))
+  "The face modification to use for library items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-mutable-modifier-face
+  '((t :underline t))
+  "The face modification to use for mutable items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-public-modifier-face
+  '((t nil))
+  "The face modification to use for public items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-reference-modifier-face
+  '((t :bold t))
+  "The face modification to use for reference items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-trait-modifier-face
+  '((t nil))
+  "The face modification to use for trait items."
+  :group 'lsp-rust-analyzer)
+
+(defface lsp-rust-analyzer-unsafe-modifier-face
+  '((t nil))
+  "The face modification to use for unsafe items."
+  :group 'lsp-rust-analyzer)
+
+(defun lsp-rust-analyzer--set-tokens ()
+  "Set the mapping between rust-analyzer keywords and fonts to apply.
+The keywords are sent in the initialize response, in the semantic
+tokens legend."
+  (setq lsp-semantic-token-modifier-faces
+        '(
+          ("documentation" . lsp-rust-analyzer-documentation-modifier-face)
+          ("declaration" . lsp-rust-analyzer-declaration-modifier-face)
+          ("definition" . lsp-rust-analyzer-definition-modifier-face)
+          ("static" . lsp-rust-analyzer-static-modifier-face)
+          ("abstract" . lsp-rust-analyzer-abstract-modifier-face)
+          ("deprecated" . lsp-rust-analyzer-deprecated-modifier-face)
+          ("readonly" . lsp-rust-analyzer-readonly-modifier-face)
+          ("default_library" . lsp-rust-analyzer-default-library-modifier-face)
+          ("async" . lsp-rust-analyzer-async-modifier-face)
+          ("attribute" . lsp-rust-analyzer-attribute-modifier-face)
+          ("callable" . lsp-rust-analyzer-callable-modifier-face)
+          ("constant" . lsp-rust-analyzer-constant-modifier-face)
+          ("consuming" . lsp-rust-analyzer-consuming-modifier-face)
+          ("control_flow" . lsp-rust-analyzer-control-flow-modifier-face)
+          ("crate_root" . lsp-rust-analyzer-crate-root-modifier-face)
+          ("injected" . lsp-rust-analyzer-injected-modifier-face)
+          ("intra_doc_link" . lsp-rust-analyzer-intra-doc-link-modifier-face)
+          ("library" . lsp-rust-analyzer-library-modifier-face)
+          ("mutable" . lsp-rust-analyzer-mutable-modifier-face)
+          ("public" . lsp-rust-analyzer-public-modifier-face)
+          ("reference" . lsp-rust-analyzer-reference-modifier-face)
+          ("trait" . lsp-rust-analyzer-trait-modifier-face)
+          ("unsafe" . lsp-rust-analyzer-unsafe-modifier-face)
+          )))
 
 (lsp-consistency-check lsp-rust)
 
