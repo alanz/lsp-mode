@@ -927,22 +927,6 @@ or JSON objects in `rust-project.json` format."
 (lsp-defun lsp-rust--analyzer-debug-lens ((&Command :arguments? [args]))
   (lsp-rust-analyzer-debug args))
 
-(defvar font-lock-mutable-face 'font-lock-mutable-face
-  "Face name to use for mutable items.")
-
-(defface font-lock-mutable-face
-  '((t :underline t))
-  "Font Lock mode face used to highlight keywords."
-  :group 'font-lock-faces)
-
-(defvar font-lock-nop-face 'font-lock-nop-face
-  "Placeholder face name that does not actually modify the face.")
-
-(defface font-lock-nop-face
-  '((t nil))
-  "Placeholder face name that does not actually modify the face."
-  :group 'font-lock-faces)
-
 (lsp-register-client
  (make-lsp-client
   :new-connection (lsp-stdio-connection
@@ -1306,35 +1290,127 @@ https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/dev/lsp-extensio
   (interactive)
   (lsp-rust-analyzer-move-item "Down"))
 
+
+;; Semantic tokens
+
+;; Modifier faces
+(defvar font-lock-documentation-modifier-face 'font-lock-nop-face
+  "Face name to use for documentation items.")
+
+(defvar font-lock-declaration-modifier-face 'font-lock-nop-face
+  "Face name to use for declaration items.")
+
+(defvar font-lock-definition-modifier-face 'font-lock-nop-face
+  "Face name to use for definition items.")
+
+(defvar font-lock-static-modifier-face 'font-lock-nop-face
+  "Face name to use for static items.")
+
+(defvar font-lock-abstract-modifier-face 'font-lock-nop-face
+  "Face name to use for abstract items.")
+
+(defvar font-lock-deprecated-modifier-face 'font-lock-nop-face
+  "Face name to use for deprecated items.")
+
+(defvar font-lock-readonly-modifier-face 'font-lock-nop-face
+  "Face name to use for readonly items.")
+
+(defvar font-lock-default-library-modifier-face 'font-lock-nop-face
+  "Face name to use for default-library items.")
+
+(defvar font-lock-async-modifier-face 'font-lock-nop-face
+  "Face name to use for async items.")
+
+(defvar font-lock-attribute-modifier-face 'font-lock-nop-face
+  "Face name to use for attribute items.")
+
+(defvar font-lock-callable-modifier-face 'font-lock-nop-face
+  "Face name to use for callable items.")
+
+(defvar font-lock-constant-modifier-face 'font-lock-nop-face
+  "Face name to use for constant items.")
+
+(defvar font-lock-consuming-modifier-face 'font-lock-nop-face
+  "Face name to use for consuming items.")
+
+(defvar font-lock-control-flow-modifier-face 'font-lock-nop-face
+  "Face name to use for control-flow items.")
+
+(defvar font-lock-crate-root-modifier-face 'font-lock-nop-face
+  "Face name to use for crate-root items.")
+
+(defvar font-lock-injected-modifier-face 'font-lock-nop-face
+  "Face name to use for injected items.")
+
+(defvar font-lock-intra-doc-link-modifier-face 'font-lock-nop-face
+  "Face name to use for intra-doc-link items.")
+
+(defvar font-lock-library-modifier-face 'font-lock-nop-face
+  "Face name to use for library items.")
+
+(defvar font-lock-mutable-modifier-face 'font-lock-mutable-modifier-face
+  "Face name to use for mutable items.")
+
+(defvar font-lock-public-modifier-face 'font-lock-nop-face
+  "Face name to use for public items.")
+
+(defvar font-lock-reference-modifier-face 'font-lock-reference-modifier-face
+  "Face name to use for reference items.")
+
+(defvar font-lock-trait-modifier-face 'font-lock-nop-face
+  "Face name to use for trait items.")
+
+(defvar font-lock-unsafe-modifier-face 'font-lock-nop-face
+  "Face name to use for unsafe items.")
+
+(defface font-lock-mutable-modifier-face
+  '((t :underline t))
+  "Font Lock mode face used to highlight keywords."
+  :group 'font-lock-faces)
+
+(defface font-lock-reference-modifier-face
+  '((t :bold t))
+  "Font Lock mode face used to highlight keywords."
+  :group 'font-lock-faces)
+
+(defvar font-lock-nop-face 'font-lock-nop-face
+  "Placeholder face name that does not actually modify the face.")
+
+(defface font-lock-nop-face
+  '((t nil))
+  "Placeholder face name that does not actually modify the face."
+  :group 'font-lock-faces)
+
+
 (defun lsp-rust-analyzer--set-tokens ()
   "Set the mapping between rust-analyzer keywords and fonts to apply.
 The keywords are sent in the initialize response, in the semantic
 tokens legend."
   (setq lsp-semantic-token-modifier-faces
         '(
-          ("documentation" . font-lock-nop-face)
-          ("declaration" . font-lock-nop-face)
-          ("definition" . font-lock-nop-face)
-          ("static" . font-lock-nop-face)
-          ("abstract" . font-lock-nop-face)
-          ("deprecated" . font-lock-nop-face)
-          ("readonly" . font-lock-nop-face)
-          ("default_library" . font-lock-nop-face)
-          ("async" . font-lock-nop-face)
-          ("attribute" . font-lock-nop-face)
-          ("callable" . font-lock-nop-face)
-          ("constant" . font-lock-nop-face)
-          ("consuming" . font-lock-nop-face)
-          ("control_flow" . font-lock-nop-face)
-          ("crate_root" . font-lock-nop-face)
-          ("injected" . font-lock-nop-face)
-          ("intra_doc_link" . font-lock-nop-face)
-          ("library" . font-lock-nop-face)
-          ("mutable" . font-lock-mutable-face)
-          ("public" . font-lock-nop-face)
-          ("reference" . font-lock-nop-face)
-          ("trait" . font-lock-nop-face)
-          ("unsafe" . font-lock-nop-face)
+          ("documentation" . font-lock-documentation-modifier-face)
+          ("declaration" . font-lock-declaration-modifier-face)
+          ("definition" . font-lock-definition-modifier-face)
+          ("static" . font-lock-static-modifier-face)
+          ("abstract" . font-lock-abstract-modifier-face)
+          ("deprecated" . font-lock-deprecated-modifier-face)
+          ("readonly" . font-lock-readonly-modifier-face)
+          ("default_library" . font-lock-default-library-modifier-face)
+          ("async" . font-lock-async-modifier-face)
+          ("attribute" . font-lock-attribute-modifier-face)
+          ("callable" . font-lock-callable-modifier-face)
+          ("constant" . font-lock-constant-modifier-face)
+          ("consuming" . font-lock-consuming-modifier-face)
+          ("control_flow" . font-lock-control-flow-modifier-face)
+          ("crate_root" . font-lock-crate-root-modifier-face)
+          ("injected" . font-lock-injected-modifier-face)
+          ("intra_doc_link" . font-lock-intra-doc-link-modifier-face)
+          ("library" . font-lock-library-modifier-face)
+          ("mutable" . font-lock-mutable-modifier-face)
+          ("public" . font-lock-public-modifier-face)
+          ("reference" . font-lock-reference-modifier-face)
+          ("trait" . font-lock-trait-modifier-face)
+          ("unsafe" . font-lock-unsafe-modifier-face)
           )))
 
 (with-eval-after-load 'rust-mode
