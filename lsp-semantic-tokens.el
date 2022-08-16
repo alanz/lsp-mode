@@ -550,8 +550,9 @@ LOUDLY will be forwarded to OLD-FONTIFY-REGION as-is."
                ;; Deal with modifiers. We cache common combinations of
                ;; modifiers, storing the faces they resolve to.
                (let* ((modifier-code (aref data (+ i 4)))
-                      (faces-to-apply (gethash modifier-code semantic-token-modifier-cache nil)))
-                 (unless faces-to-apply
+                      (faces-to-apply (gethash modifier-code semantic-token-modifier-cache 'not-found)))
+                 (when (eq 'not-found faces-to-apply)
+                   (setq faces-to-apply nil)
                    (cl-loop for j from 0 to (1- (length modifier-faces)) do
                             (when (and (aref modifier-faces j)
                                        (> (logand modifier-code (lsh 1 j)) 0))
