@@ -555,14 +555,11 @@ LOUDLY will be forwarded to OLD-FONTIFY-REGION as-is."
                    (setq faces-to-apply nil)
                    (cl-loop for j from 0 to (1- (length modifier-faces)) do
                             (when (and (aref modifier-faces j)
-                                       (> (logand modifier-code (lsh 1 j)) 0))
+                                       (> (logand modifier-code (ash 1 j)) 0))
                               (push (aref modifier-faces j) faces-to-apply)))
-                   ;; What if there are no faces? we need to cache that fact.
                    (puthash modifier-code faces-to-apply semantic-token-modifier-cache))
-                 (mapc (lambda (face)
-                         (add-face-text-property text-property-beg text-property-end face))
-                       faces-to-apply)
-                   )
+                 (dolist (face faces-to-apply)
+                   (add-face-text-property text-property-beg text-property-end face)))
                when (> current-line line-max-inclusive) return nil)))))
       `(jit-lock-bounds ,beg . ,end)))))
 
