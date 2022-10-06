@@ -12,14 +12,14 @@
         <meta name="author" content="ercdll1337@gmail.com">
       
       
-        <link rel="canonical" href="https://emacs-lsp.github.io/lsp-mode/page/lsp-lua-roblox/">
+        <link rel="canonical" href="https://emacs-lsp.github.io/lsp-mode/page/lsp-pls/">
       
       <link rel="icon" href="../../examples/logo-mini.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.0.0">
     
     
       
-        <title>Lsp lua roblox - LSP Mode - LSP support for Emacs</title>
+        <title>Perl (PLS) - LSP Mode - LSP support for Emacs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lua-roblox" class="md-skip">
+        <a href="#pls" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lsp lua roblox
+              Perl (PLS)
             
           </span>
         </div>
@@ -223,13 +223,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../languages/" class="md-tabs__link">
+      <a href="../languages/" class="md-tabs__link md-tabs__link--active">
         Languages
       </a>
     </li>
@@ -1036,12 +1038,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -1888,11 +1892,155 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../lsp-pls/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Perl (PLS)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Perl (PLS)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debugger-not-available" class="md-nav__link">
+    Debugger: Not available
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-configurations" class="md-nav__link">
+    Available configurations
+  </a>
+  
+    <nav class="md-nav" aria-label="Available configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-arguments" class="md-nav__link">
+    lsp-pls-arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-executable" class="md-nav__link">
+    lsp-pls-executable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-include" class="md-nav__link">
+    lsp-pls-include
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-perlcritic-enabled" class="md-nav__link">
+    lsp-pls-perlcritic-enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-perlcritic-rc" class="md-nav__link">
+    lsp-pls-perlcritic-rc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-perltidy-rc" class="md-nav__link">
+    lsp-pls-perltidy-rc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-syntax-args" class="md-nav__link">
+    lsp-pls-syntax-args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-syntax-enabled" class="md-nav__link">
+    lsp-pls-syntax-enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-syntax-perl" class="md-nav__link">
+    lsp-pls-syntax-perl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-working-dir" class="md-nav__link">
+    lsp-pls-working-dir
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2997,6 +3145,82 @@
     Available configurations
   </a>
   
+    <nav class="md-nav" aria-label="Available configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-arguments" class="md-nav__link">
+    lsp-pls-arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-executable" class="md-nav__link">
+    lsp-pls-executable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-include" class="md-nav__link">
+    lsp-pls-include
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-perlcritic-enabled" class="md-nav__link">
+    lsp-pls-perlcritic-enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-perlcritic-rc" class="md-nav__link">
+    lsp-pls-perlcritic-rc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-perltidy-rc" class="md-nav__link">
+    lsp-pls-perltidy-rc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-syntax-args" class="md-nav__link">
+    lsp-pls-syntax-args
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-syntax-enabled" class="md-nav__link">
+    lsp-pls-syntax-enabled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-syntax-perl" class="md-nav__link">
+    lsp-pls-syntax-perl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsp-pls-working-dir" class="md-nav__link">
+    lsp-pls-working-dir
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3035,7 +3259,7 @@
 <!-- Edit button -->
 
 <a
-  href="https://github.com/emacs-lsp/lsp-mode/edit/master/clients/lsp-lua.el"
+  href="https://github.com/emacs-lsp/lsp-mode/edit/master/clients/lsp-pls.el"
   title="Edit this page"
   class="md-content__button md-icon"
 >
@@ -3054,13 +3278,69 @@
 
 
 <!-- Markdown content -->
-<h1 id="lua-roblox">Lua Roblox<a class="headerlink" href="#lua-roblox" title="Permanent link">#</a></h1>
+<h1 id="pls">PLS<a class="headerlink" href="#pls" title="Permanent link">#</a></h1>
 <h2 id="server">Server<a class="headerlink" href="#server" title="Permanent link">#</a></h2>
-<p>For more information about the LSP server, check <a href="https://github.com/NightrainsRbx/RobloxLsp">lua-roblox-language-server</a>.</p>
+<p>For more information about the LSP server, check <a href="https://metacpan.org/pod/PLS">Perl Language Server</a>.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h2>
-<p>For more instructions on how to install manually, check <a href="https://github.com/NightrainsRbx/RobloxLsp">here</a>.</p>
+<p><code>cpan PLS</code></p>
 <h3 id="debugger-not-available">Debugger: Not available<a class="headerlink" href="#debugger-not-available" title="Permanent link">#</a></h3>
 <h2 id="available-configurations">Available configurations<a class="headerlink" href="#available-configurations" title="Permanent link">#</a></h2>
+<h3 id="lsp-pls-arguments"><code>lsp-pls-arguments</code><a class="headerlink" href="#lsp-pls-arguments" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>(repeat 'string)</code></p>
+<p><em>Default:</em> <code>nil</code></p>
+<p>Additional arguments needed to execute PLS.</p>
+<hr />
+<h3 id="lsp-pls-executable"><code>lsp-pls-executable</code><a class="headerlink" href="#lsp-pls-executable" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>(string)</code></p>
+<p><em>Default:</em> <code>pls</code></p>
+<p>Full path to the PLS executable.</p>
+<hr />
+<h3 id="lsp-pls-include"><code>lsp-pls-include</code><a class="headerlink" href="#lsp-pls-include" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>(repeat 'string)</code></p>
+<p><em>Default:</em> <code>nil</code></p>
+<p>Paths to be added to your @INC.</p>
+<hr />
+<h3 id="lsp-pls-perlcritic-enabled"><code>lsp-pls-perlcritic-enabled</code><a class="headerlink" href="#lsp-pls-perlcritic-enabled" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>(boolean)</code></p>
+<p><em>Default:</em> <code>t</code></p>
+<p>Enable perlcritic checking.</p>
+<hr />
+<h3 id="lsp-pls-perlcritic-rc"><code>lsp-pls-perlcritic-rc</code><a class="headerlink" href="#lsp-pls-perlcritic-rc" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>(string)</code></p>
+<p><em>Default:</em> <code>nil</code></p>
+<p>Path to your .perlcriticrc file.
+Default is "~/.perlcriticrc" when not configured.</p>
+<hr />
+<h3 id="lsp-pls-perltidy-rc"><code>lsp-pls-perltidy-rc</code><a class="headerlink" href="#lsp-pls-perltidy-rc" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>(string)</code></p>
+<p><em>Default:</em> <code>nil</code></p>
+<p>Path to your .perltidyrc file.
+Default is "~/.perltidyrc" when not configured.</p>
+<hr />
+<h3 id="lsp-pls-syntax-args"><code>lsp-pls-syntax-args</code><a class="headerlink" href="#lsp-pls-syntax-args" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>(repeat 'string)</code></p>
+<p><em>Default:</em> <code>nil</code></p>
+<p>Additional arguments to pass to Perl when syntax checking.
+This is useful if there is a BEGIN block in your code that
+changes behavior depending on the contents of @ARGV.</p>
+<hr />
+<h3 id="lsp-pls-syntax-enabled"><code>lsp-pls-syntax-enabled</code><a class="headerlink" href="#lsp-pls-syntax-enabled" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>(boolean)</code></p>
+<p><em>Default:</em> <code>t</code></p>
+<p>Enable syntax checking.</p>
+<hr />
+<h3 id="lsp-pls-syntax-perl"><code>lsp-pls-syntax-perl</code><a class="headerlink" href="#lsp-pls-syntax-perl" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>(string)</code></p>
+<p><em>Default:</em> <code>nil</code></p>
+<p>Full path to an alternate perl used for syntax checking.
+By default, the perl used to run PLS will be used.</p>
+<hr />
+<h3 id="lsp-pls-working-dir"><code>lsp-pls-working-dir</code><a class="headerlink" href="#lsp-pls-working-dir" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>(string)</code></p>
+<p><em>Default:</em> <code>nil</code></p>
+<p>Working directory to run PLS in.
+Defaults to the workspace root when not configured.</p>
+<hr />
 
 <!-- Source file information -->
 
@@ -3083,6 +3363,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../lsp-pascal/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pascal/Object Pascal" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Pascal/Object Pascal
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../lsp-perl/" class="md-footer__link md-footer__link--next" aria-label="Next: Perl (Perl::LanguageServer)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Perl (Perl::LanguageServer)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
