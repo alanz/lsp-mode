@@ -1235,6 +1235,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-astro/" class="md-nav__link">
+        Astro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-awk/" class="md-nav__link">
+        AWK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-bash/" class="md-nav__link">
         Bash
       </a>
@@ -1487,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lsp-erlang/" class="md-nav__link">
+      <a href="../lsp-erlang.md" class="md-nav__link">
         Erlang
       </a>
     </li>
@@ -1559,6 +1587,20 @@
     <li class="md-nav__item">
       <a href="../lsp-gleam/" class="md-nav__link">
         Gleam
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-glsl/" class="md-nav__link">
+        GLSL
       </a>
     </li>
   
@@ -1936,7 +1978,21 @@
   
     <li class="md-nav__item">
       <a href="../lsp-nix/" class="md-nav__link">
-        Nix
+        Nix (rnix-lsp)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-nix-nil/" class="md-nav__link">
+        Nix (nil)
       </a>
     </li>
   
@@ -2201,6 +2257,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-ruff-lsp/" class="md-nav__link">
+        Python (Ruff)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-r/" class="md-nav__link">
         R
       </a>
@@ -2231,6 +2301,34 @@
     <li class="md-nav__item">
       <a href="../lsp-racket-language-server/" class="md-nav__link">
         Racket (Theia)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-rubocop/" class="md-nav__link">
+        Ruby (RuboCop)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-ruby-lsp/" class="md-nav__link">
+        Ruby (ruby-lsp)
       </a>
     </li>
   
@@ -2341,8 +2439,50 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-semgrep/" class="md-nav__link">
+        Semgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-shader/" class="md-nav__link">
+        ShaderLab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-sqls/" class="md-nav__link">
         SQL (sqls)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-sml.md" class="md-nav__link">
+        Standard ML (Millet)
       </a>
     </li>
   
@@ -2441,6 +2581,20 @@
     <li class="md-nav__item">
       <a href="../lsp-latex/" class="md-nav__link">
         TeX, LaTeX, etc (texlab, external)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-tilt/" class="md-nav__link">
+        Tilt
       </a>
     </li>
   
@@ -3266,6 +3420,12 @@ Finally, call <code>M-x lsp</code> or use the corresponding major mode hook to a
     <span class="nb">:hook</span> <span class="p">(</span><span class="nv">XXX-mode</span> <span class="o">.</span> <span class="nv">lsp-deferred</span><span class="p">)</span>
     <span class="nb">:commands</span> <span class="p">(</span><span class="nv">lsp</span> <span class="nv">lsp-deferred</span><span class="p">))</span>
 </code></pre></div>
+<p>When you are not using <code>package.el</code> to install <code>lsp-mode</code> make sure to put clients folder to the <code>load-path</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">;; The path to lsp-mode needs to be added to load-path as well as the</span>
+<span class="c1">;; path to the `clients&#39; subdirectory.</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&quot;lib/lsp-mode&quot;</span> <span class="nv">user-emacs-directory</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">&#39;load-path</span> <span class="p">(</span><span class="nf">expand-file-name</span> <span class="s">&quot;lib/lsp-mode/clients&quot;</span> <span class="nv">user-emacs-directory</span><span class="p">))</span>
+</code></pre></div>
 <h2 id="install-a-language-server">Install a language server<a class="headerlink" href="#install-a-language-server" title="Permanent link">#</a></h2>
 <p>For instructions on how to install a server for your language, check the <a href="../languages/">available supported servers</a>.</p>
 
@@ -3276,7 +3436,7 @@ Finally, call <code>M-x lsp</code> or use the corresponding major mode hook to a
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 4, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2023</span>
       
     
   </small>

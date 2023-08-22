@@ -1138,6 +1138,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-astro/" class="md-nav__link">
+        Astro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-awk/" class="md-nav__link">
+        AWK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-bash/" class="md-nav__link">
         Bash
       </a>
@@ -1230,13 +1258,6 @@
           <li class="md-nav__item">
   <a href="#lsp-beancount-langserver-executable" class="md-nav__link">
     lsp-beancount-langserver-executable
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lsp-beancount-python-interpreter" class="md-nav__link">
-    lsp-beancount-python-interpreter
   </a>
   
 </li>
@@ -1485,7 +1506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lsp-erlang/" class="md-nav__link">
+      <a href="../lsp-erlang.md" class="md-nav__link">
         Erlang
       </a>
     </li>
@@ -1557,6 +1578,20 @@
     <li class="md-nav__item">
       <a href="../lsp-gleam/" class="md-nav__link">
         Gleam
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-glsl/" class="md-nav__link">
+        GLSL
       </a>
     </li>
   
@@ -1934,7 +1969,21 @@
   
     <li class="md-nav__item">
       <a href="../lsp-nix/" class="md-nav__link">
-        Nix
+        Nix (rnix-lsp)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-nix-nil/" class="md-nav__link">
+        Nix (nil)
       </a>
     </li>
   
@@ -2199,6 +2248,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-ruff-lsp/" class="md-nav__link">
+        Python (Ruff)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-r/" class="md-nav__link">
         R
       </a>
@@ -2229,6 +2292,34 @@
     <li class="md-nav__item">
       <a href="../lsp-racket-language-server/" class="md-nav__link">
         Racket (Theia)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-rubocop/" class="md-nav__link">
+        Ruby (RuboCop)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-ruby-lsp/" class="md-nav__link">
+        Ruby (ruby-lsp)
       </a>
     </li>
   
@@ -2339,8 +2430,50 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-semgrep/" class="md-nav__link">
+        Semgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-shader/" class="md-nav__link">
+        ShaderLab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-sqls/" class="md-nav__link">
         SQL (sqls)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-sml.md" class="md-nav__link">
+        Standard ML (Millet)
       </a>
     </li>
   
@@ -2439,6 +2572,20 @@
     <li class="md-nav__item">
       <a href="../lsp-latex/" class="md-nav__link">
         TeX, LaTeX, etc (texlab, external)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-tilt/" class="md-nav__link">
+        Tilt
       </a>
     </li>
   
@@ -3113,13 +3260,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#lsp-beancount-python-interpreter" class="md-nav__link">
-    lsp-beancount-python-interpreter
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3182,27 +3322,25 @@
 <!-- Markdown content -->
 <h1 id="beancount">Beancount<a class="headerlink" href="#beancount" title="Permanent link">#</a></h1>
 <h2 id="server">Server<a class="headerlink" href="#server" title="Permanent link">#</a></h2>
-<p>For more information about the LSP server, check <a href="https://github.com/polarmutex/beancount-language-server">beancount-langserver</a>.</p>
+<p>For more information about the LSP server, check <a href="https://github.com/polarmutex/beancount-language-server">beancount-language-server</a>.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h2>
 <p>This Server supports automatic install.
 Install this language server with <kbd>M-x</kbd><code>lsp-install-server</code><kbd>RET</kbd><code>beancount-ls</code><kbd>RET</kbd>.</p>
-<p><code>npm install -g beancount-langserver</code></p>
+<p><code>cargo install beancount-language-server</code></p>
+<p>For more instructions on how to install manually, check <a href="https://github.com/polarmutex/beancount-language-server#installation">here</a>.</p>
 <h3 id="debugger-not-available">Debugger: Not available<a class="headerlink" href="#debugger-not-available" title="Permanent link">#</a></h3>
 <h2 id="available-configurations">Available configurations<a class="headerlink" href="#available-configurations" title="Permanent link">#</a></h2>
 <h3 id="lsp-beancount-journal-file"><code>lsp-beancount-journal-file</code><a class="headerlink" href="#lsp-beancount-journal-file" title="Permanent link">#</a></h3>
 <p><em>Type:</em> <code>string</code></p>
 <p><em>Default:</em> <code>nil</code></p>
-<p>Pathg to Beancount journal file.</p>
+<p>Path to Beancount journal file.</p>
+<p>The path can be absolute, or relative to the currently opened file.
+Use nil (the default) to use the current beancount buffer as the journal file.</p>
 <hr />
 <h3 id="lsp-beancount-langserver-executable"><code>lsp-beancount-langserver-executable</code><a class="headerlink" href="#lsp-beancount-langserver-executable" title="Permanent link">#</a></h3>
 <p><em>Type:</em> <code>string</code></p>
-<p><em>Default:</em> <code>beancount-langserver</code></p>
+<p><em>Default:</em> <code>beancount-language-server</code></p>
 <p>Command to start Beancount language server.</p>
-<hr />
-<h3 id="lsp-beancount-python-interpreter"><code>lsp-beancount-python-interpreter</code><a class="headerlink" href="#lsp-beancount-python-interpreter" title="Permanent link">#</a></h3>
-<p><em>Type:</em> <code>string</code></p>
-<p><em>Default:</em> <code>nil</code></p>
-<p>Path to Python executable.</p>
 <hr />
 
 <!-- Source file information -->
@@ -3212,7 +3350,7 @@ Install this language server with <kbd>M-x</kbd><code>lsp-install-server</code><
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2023</span>
       
     
   </small>

@@ -1136,6 +1136,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-astro/" class="md-nav__link">
+        Astro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-awk/" class="md-nav__link">
+        AWK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-bash/" class="md-nav__link">
         Bash
       </a>
@@ -1388,7 +1416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lsp-erlang/" class="md-nav__link">
+      <a href="../lsp-erlang.md" class="md-nav__link">
         Erlang
       </a>
     </li>
@@ -1460,6 +1488,20 @@
     <li class="md-nav__item">
       <a href="../lsp-gleam/" class="md-nav__link">
         Gleam
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-glsl/" class="md-nav__link">
+        GLSL
       </a>
     </li>
   
@@ -1837,7 +1879,21 @@
   
     <li class="md-nav__item">
       <a href="../lsp-nix/" class="md-nav__link">
-        Nix
+        Nix (rnix-lsp)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-nix-nil/" class="md-nav__link">
+        Nix (nil)
       </a>
     </li>
   
@@ -2102,6 +2158,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-ruff-lsp/" class="md-nav__link">
+        Python (Ruff)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-r/" class="md-nav__link">
         R
       </a>
@@ -2132,6 +2202,34 @@
     <li class="md-nav__item">
       <a href="../lsp-racket-language-server/" class="md-nav__link">
         Racket (Theia)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-rubocop/" class="md-nav__link">
+        Ruby (RuboCop)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-ruby-lsp/" class="md-nav__link">
+        Ruby (ruby-lsp)
       </a>
     </li>
   
@@ -2242,8 +2340,50 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-semgrep/" class="md-nav__link">
+        Semgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-shader/" class="md-nav__link">
+        ShaderLab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-sqls/" class="md-nav__link">
         SQL (sqls)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-sml.md" class="md-nav__link">
+        Standard ML (Millet)
       </a>
     </li>
   
@@ -2342,6 +2482,20 @@
     <li class="md-nav__item">
       <a href="../lsp-latex/" class="md-nav__link">
         TeX, LaTeX, etc (texlab, external)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-tilt/" class="md-nav__link">
+        Tilt
       </a>
     </li>
   
@@ -3233,6 +3387,19 @@
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">#</a></h1>
 <h2 id="unreleased-801">Unreleased 8.0.1<a class="headerlink" href="#unreleased-801" title="Permanent link">#</a></h2>
 <ul>
+<li>Add
+    <a href="https://github.com/WhatsApp/erlang-language-platform">erlang-language-platform</a>
+    support in lsp-erlang client.</li>
+<li>Add
+    <a href="https://github.com/elixir-tools/credo-language-server">credo-language-server</a></li>
+<li>Add support for clojure-ts-mode in clojure-lsp client</li>
+<li>terraform-ls now supports prefill required fields and the ability to
+    validate on save.</li>
+<li>Ignore <code>.terraform</code> and <code>.terragrunt-cache</code> directories</li>
+<li><code>lsp-bash</code> now supports <code>bash-ts-mode</code></li>
+<li><code>lsp-ruby-syntax-tree</code>, <code>lsp-solargraph</code>, <code>lsp-sorbet</code>, <code>lsp-steep</code>,
+    and <code>lsp-typeprof</code> now support <code>ruby-ts-mode</code></li>
+<li>Drop support for emacs 26.1 and 26.2</li>
 <li>Added support for <code>textDocument/linkedEditingRange</code> via
     <code>lsp-iedit-linked-ranges</code> and <code>lsp-evil-multiedit-ranges</code> (see
     <a href="https://github.com/emacs-lsp/lsp-mode/pull/3166">#3166</a>)</li>
@@ -3264,7 +3431,6 @@
     emacs@emacs-28 on macOS) due to a switch <code>posix_spawn</code> and not
     setting proper sigmask on child processes.</li>
 <li>Add TypeProf support.</li>
-<li>Add Volar support.</li>
 <li>Add Ansible support.</li>
 <li>Disable <code>lsp-steep-use-bundler</code> by default.</li>
 <li>Add <a href="https://github.com/idris-community/idris2-lsp">idris2-lsp</a></li>
@@ -3276,7 +3442,7 @@
     <code>workspace/didRenameFiles</code>.</li>
 <li>Improve project root import to read specific keys instead of any
     events.</li>
-<li>Support <code>labelDetails</code> of Lsp Specification 3.17</li>
+<li>Support <code>labelDetails</code> of LSP Specification 3.17</li>
 <li>Add Gleam support</li>
 <li>Drop deprecated rust-analyzer variable
     lsp-rust-analyzer-import-merge-behaviour</li>
@@ -3305,6 +3471,44 @@
 <li>Fix <code>lsp-avy-lens</code> when <code>lsp-lens-place-position</code> position is
     <code>end-of-line</code></li>
 <li>Add <code>lsp-clojure-trace-enable</code> variable.</li>
+<li>Add some support for rust-analyzer semantic token modifiers.
+    Highlights mutable and reference variables.</li>
+<li>Update version for <code>lsp-xml</code> to 0.21.0, adding custom variables for
+    new formatting options.</li>
+<li>Changes variable <code>lsp-xml-validation-schema</code> to be an alist rather
+    than a boolean.</li>
+<li>Adds <code>lsp-xml-preferences-quote-style</code> as a replacement for obsolete
+    <code>lsp-xml-format-quotes</code>.</li>
+<li>Add <a href="https://github.com/oxalica/nil">nil</a> support (additional server
+    for Nix)</li>
+<li>Add <a href="https://github.com/johnsoncodehk/volar/pull/1916">Volar 1.0</a>
+    support, refactor vue-language-server <code>initializationOptions</code>, and
+    remove multi server that is no longer needed.</li>
+<li>Ensure that incomplete completions only trigger when retriggering
+    from the same completion session #3028</li>
+<li><code>lsp-kotlin</code> now supports <code>kotlin-ts-mode</code></li>
+<li><code>lsp-elixir</code> now supports <code>elixir-ts-mode</code> and <code>heex-ts-mode</code></li>
+<li>Update Magik</li>
+<li>Add <code>lsp-clients-typescript-prefer-use-project-ts-server</code> custom
+    variable to try to use the project's tsserver.js instead of the one
+    installed by lsp-mode.</li>
+<li>Add <a href="https://github.com/charliermarsh/ruff-lsp">ruff-lsp</a> support
+    (additional server for Python).</li>
+<li>Update documentation of Vue3 install server</li>
+<li>Add GLSL support.</li>
+<li>Move inlay hint support in core from <code>lsp-rust</code> and
+    <code>lsp-javascript</code>. Use <code>lsp-inlay-hint-enable</code> instead of
+    <code>lsp-rust-analyzer-server-display-inlay-hints</code> and
+    <code>lsp-javascript-server-display-inlay-hints</code></li>
+<li>Add ShaderLab support.</li>
+<li>Remove custom variable <code>lsp-inlay-hint-enum-format</code> since LSP
+    Specification 3.17 only has <code>type</code> and <code>parameter</code> hint kinds.</li>
+<li>Add <a href="https://semgrep.dev">Semgrep</a> support</li>
+<li>Add AWK language server support.</li>
+<li>Add support for <code>scala-ts-mode</code>.</li>
+<li>Drop support for emacs 26.3</li>
+<li>Add [<a href="https://github.com/rubocop/rubocop">https://github.com/rubocop/rubocop</a>][RuboCop built-in
+    language server]] for linting and formatting Ruby code.</li>
 </ul>
 <h2 id="release-800">Release 8.0.0<a class="headerlink" href="#release-800" title="Permanent link">#</a></h2>
 <ul>
@@ -3709,7 +3913,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2023</span>
       
     
   </small>

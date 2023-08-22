@@ -1193,6 +1193,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#lsp-ansible-add-on" class="md-nav__link">
+    lsp-ansible-add-on?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#lsp-ansible-ansible-path" class="md-nav__link">
     lsp-ansible-ansible-path
   </a>
@@ -1327,6 +1334,34 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-astro/" class="md-nav__link">
+        Astro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-awk/" class="md-nav__link">
+        AWK
+      </a>
     </li>
   
 
@@ -1590,7 +1625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lsp-erlang/" class="md-nav__link">
+      <a href="../lsp-erlang.md" class="md-nav__link">
         Erlang
       </a>
     </li>
@@ -1662,6 +1697,20 @@
     <li class="md-nav__item">
       <a href="../lsp-gleam/" class="md-nav__link">
         Gleam
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-glsl/" class="md-nav__link">
+        GLSL
       </a>
     </li>
   
@@ -2039,7 +2088,21 @@
   
     <li class="md-nav__item">
       <a href="../lsp-nix/" class="md-nav__link">
-        Nix
+        Nix (rnix-lsp)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-nix-nil/" class="md-nav__link">
+        Nix (nil)
       </a>
     </li>
   
@@ -2304,6 +2367,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-ruff-lsp/" class="md-nav__link">
+        Python (Ruff)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-r/" class="md-nav__link">
         R
       </a>
@@ -2334,6 +2411,34 @@
     <li class="md-nav__item">
       <a href="../lsp-racket-language-server/" class="md-nav__link">
         Racket (Theia)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-rubocop/" class="md-nav__link">
+        Ruby (RuboCop)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-ruby-lsp/" class="md-nav__link">
+        Ruby (ruby-lsp)
       </a>
     </li>
   
@@ -2444,8 +2549,50 @@
   
   
     <li class="md-nav__item">
+      <a href="../lsp-semgrep/" class="md-nav__link">
+        Semgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-shader/" class="md-nav__link">
+        ShaderLab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../lsp-sqls/" class="md-nav__link">
         SQL (sqls)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-sml.md" class="md-nav__link">
+        Standard ML (Millet)
       </a>
     </li>
   
@@ -2544,6 +2691,20 @@
     <li class="md-nav__item">
       <a href="../lsp-latex/" class="md-nav__link">
         TeX, LaTeX, etc (texlab, external)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsp-tilt/" class="md-nav__link">
+        Tilt
       </a>
     </li>
   
@@ -3205,6 +3366,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#lsp-ansible-add-on" class="md-nav__link">
+    lsp-ansible-add-on?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#lsp-ansible-ansible-path" class="md-nav__link">
     lsp-ansible-ansible-path
   </a>
@@ -3399,6 +3567,13 @@ Install this language server with <kbd>M-x</kbd><code>lsp-install-server</code><
 <p><code>npm i -g @ansible/ansible-language-server</code></p>
 <h3 id="debugger-not-available">Debugger: Not available<a class="headerlink" href="#debugger-not-available" title="Permanent link">#</a></h3>
 <h2 id="available-configurations">Available configurations<a class="headerlink" href="#available-configurations" title="Permanent link">#</a></h2>
+<h3 id="lsp-ansible-add-on"><code>lsp-ansible-add-on?</code><a class="headerlink" href="#lsp-ansible-add-on" title="Permanent link">#</a></h3>
+<p><em>Type:</em> <code>boolean</code></p>
+<p><em>Default:</em> <code>t</code></p>
+<p>Make the client <code>add-on</code> so that it works with other language servers.
+<code>yamlls</code>is a common one.</p>
+<p>Enabled by default.</p>
+<hr />
 <h3 id="lsp-ansible-ansible-path"><code>lsp-ansible-ansible-path</code><a class="headerlink" href="#lsp-ansible-ansible-path" title="Permanent link">#</a></h3>
 <p><em>Type:</em> <code>string</code></p>
 <p><em>Default:</em> <code>ansible</code></p>
@@ -3523,7 +3698,7 @@ $PATH is searched for the executable.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2023</span>
       
     
   </small>
@@ -3557,13 +3732,13 @@ $PATH is searched for the executable.</p>
       
       
         
-        <a href="../lsp-bash/" class="md-footer__link md-footer__link--next" aria-label="Next: Bash" rel="next">
+        <a href="../lsp-astro/" class="md-footer__link md-footer__link--next" aria-label="Next: Astro" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Bash
+              Astro
             </div>
           </div>
           <div class="md-footer__button md-icon">

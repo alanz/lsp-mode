@@ -1216,6 +1216,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../lsp-astro/" class="md-nav__link">
+        Astro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lsp-awk/" class="md-nav__link">
+        AWK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../lsp-bash/" class="md-nav__link">
         Bash
       </a>
@@ -1468,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lsp-erlang/" class="md-nav__link">
+      <a href="../../lsp-erlang.md" class="md-nav__link">
         Erlang
       </a>
     </li>
@@ -1540,6 +1568,20 @@
     <li class="md-nav__item">
       <a href="../../lsp-gleam/" class="md-nav__link">
         Gleam
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lsp-glsl/" class="md-nav__link">
+        GLSL
       </a>
     </li>
   
@@ -1917,7 +1959,21 @@
   
     <li class="md-nav__item">
       <a href="../../lsp-nix/" class="md-nav__link">
-        Nix
+        Nix (rnix-lsp)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lsp-nix-nil/" class="md-nav__link">
+        Nix (nil)
       </a>
     </li>
   
@@ -2182,6 +2238,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../lsp-ruff-lsp/" class="md-nav__link">
+        Python (Ruff)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../lsp-r/" class="md-nav__link">
         R
       </a>
@@ -2212,6 +2282,34 @@
     <li class="md-nav__item">
       <a href="../../lsp-racket-language-server/" class="md-nav__link">
         Racket (Theia)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lsp-rubocop/" class="md-nav__link">
+        Ruby (RuboCop)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lsp-ruby-lsp/" class="md-nav__link">
+        Ruby (ruby-lsp)
       </a>
     </li>
   
@@ -2322,8 +2420,50 @@
   
   
     <li class="md-nav__item">
+      <a href="../../lsp-semgrep/" class="md-nav__link">
+        Semgrep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lsp-shader/" class="md-nav__link">
+        ShaderLab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../lsp-sqls/" class="md-nav__link">
         SQL (sqls)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lsp-sml.md" class="md-nav__link">
+        Standard ML (Millet)
       </a>
     </li>
   
@@ -2422,6 +2562,20 @@
     <li class="md-nav__item">
       <a href="../../lsp-latex/" class="md-nav__link">
         TeX, LaTeX, etc (texlab, external)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lsp-tilt/" class="md-nav__link">
+        Tilt
       </a>
     </li>
   
@@ -3158,7 +3312,8 @@ or call the function <code>lsp-dired-mode</code>.</p>
 <h3 id="lsp-dired-path-error-face"><code>lsp-dired-path-error-face</code><a class="headerlink" href="#lsp-dired-path-error-face" title="Permanent link">#</a></h3>
 <p><em>Type:</em> <code>face</code></p>
 <p><em>Default:</em> <code>((t :underline (:style wave :color Red1)))</code></p>
-<p>Face used for breadcrumb paths on headerline when there is an error under that path</p>
+<p>Face used for breadcrumb paths on headerline when there is an error under
+that path</p>
 <hr />
 <h3 id="lsp-dired-path-face"><code>lsp-dired-path-face</code><a class="headerlink" href="#lsp-dired-path-face" title="Permanent link">#</a></h3>
 <p><em>Type:</em> <code>face</code></p>
@@ -3168,17 +3323,20 @@ or call the function <code>lsp-dired-mode</code>.</p>
 <h3 id="lsp-dired-path-hint-face"><code>lsp-dired-path-hint-face</code><a class="headerlink" href="#lsp-dired-path-hint-face" title="Permanent link">#</a></h3>
 <p><em>Type:</em> <code>face</code></p>
 <p><em>Default:</em> <code>((t :underline (:style wave :color Green)))</code></p>
-<p>Face used for breadcrumb paths on headerline when there is an hint under that path</p>
+<p>Face used for breadcrumb paths on headerline when there is an hint under that
+path</p>
 <hr />
 <h3 id="lsp-dired-path-info-face"><code>lsp-dired-path-info-face</code><a class="headerlink" href="#lsp-dired-path-info-face" title="Permanent link">#</a></h3>
 <p><em>Type:</em> <code>face</code></p>
 <p><em>Default:</em> <code>((t :underline (:style wave :color Green)))</code></p>
-<p>Face used for breadcrumb paths on headerline when there is an info under that path</p>
+<p>Face used for breadcrumb paths on headerline when there is an info under that
+path</p>
 <hr />
 <h3 id="lsp-dired-path-warning-face"><code>lsp-dired-path-warning-face</code><a class="headerlink" href="#lsp-dired-path-warning-face" title="Permanent link">#</a></h3>
 <p><em>Type:</em> <code>face</code></p>
 <p><em>Default:</em> <code>((t :underline (:style wave :color Yellow)))</code></p>
-<p>Face used for breadcrumb paths on headerline when there is an warning under that path</p>
+<p>Face used for breadcrumb paths on headerline when there is an warning under
+that path</p>
 <hr />
 
 <!-- Source file information -->
@@ -3188,7 +3346,7 @@ or call the function <code>lsp-dired-mode</code>.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2023</span>
       
     
   </small>
