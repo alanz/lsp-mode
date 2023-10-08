@@ -146,9 +146,9 @@
   {
     "name": "crystal",
     "full-name": "Crystal",
-    "server-name": "scry",
-    "server-url": "https://github.com/crystal-lang-tools/scry",
-    "installation-url": "https://github.com/crystal-lang-tools/scry#installation",
+    "server-name": "crystalline",
+    "server-url": "https://github.com/elbywan/crystalline",
+    "installation-url": "https://github.com/elbywan/crystalline#installation",
     "debugger": "Not available"
   },
   {
@@ -499,6 +499,22 @@
     "server-name": "mint",
     "server-url": "https://github.com/mint-lang/mint",
     "installation-url": "https://mint-lang.com/blog/mint-0.12.0",
+    "debugger": "Not available"
+  },
+  {
+    "name": "move",
+    "full-name": "Move Language",
+    "server-name": "move-analyzer",
+    "server-url": "https://github.com/move-language/move",
+    "installation-url": "https://github.com/move-language/move/tree/main/language/move-analyzer",
+    "debugger": "Not available"
+  },
+  {
+    "name": "mdx",
+    "full-name": "mdx",
+    "server-name": "mdx-analyzer",
+    "server-url": "https://github.com/mdx-js/mdx-analyzer/tree/main/packages/language-server",
+    "installation": "npm install -g @mdx-js/language-server",
     "debugger": "Not available"
   },
   {
